@@ -1,9 +1,18 @@
+@font-face {
+  font-family: "acier-bat-solid";
+  src: url("https://use.typekit.net/af/4a14d5/00000000000000007735dfb6/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),
+       url("https://use.typekit.net/af/4a14d5/00000000000000007735dfb6/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),
+       url("https://use.typekit.net/af/4a14d5/00000000000000007735dfb6/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: "acier-bat-solid", "sans serif";
 
     --accent-rgb: 52, 211, 153;
     --darker-accent-rgb: 0, 204, 150;
@@ -47,8 +56,20 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  min-height: 100vh;
+  background-color: #fbf3e2;
+  color: #02395d;
+  font-size: 20px;
+  line-height: 1.45;
+  margin: 0;
+  background-image: url(https://soulagain.crypto-elites.club/assets/images/bg/spiral2.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 a {
@@ -61,15 +82,87 @@ a {
     color-scheme: dark;
   }
 }
-
+button.wallet-adapter-button-trigger {
+  line-height: 1.45;
+}
 button.wallet-adapter-button-trigger {
   cursor: pointer;
   color: rgb(var(--foreground-rgb)) !important;
   border: 1px solid rgb(var(--tertiary-background-rgb)) !important;
   border-radius: var(--border-radius) !important;
-  background-color: rgb(var(--secondary-background-rgb)) !important;
+  background-color: #BA4564;
+  font-family: acier-bat-solid;
 }
 
 button.wallet-adapter-button-trigger:hover {
-  background-color: rgb(var(--hover-background-rgb)) !important;
+  background-color: #ab9ff2 !important;
+}
+
+.h-cont {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0px 20px;
+}
+.left-sect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+}
+.logo {
+  width: 100%;
+  max-height: 90px;
+  height: 90px;
+}
+
+.logo-flux {
+  width: 100%;
+  max-height: 90px;
+  height: 90px;
+}
+
+.Navhome {
+  color: #FBF3E2;
+  text-decoration: none;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin-right: 55px;
+}
+.footer {
+  background-color: #02395d;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FBF3E2;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+@media (max-width: 800px) {
+  .Navhome {
+    display: none;
+  }
+  .logo {
+    max-height: 90px;
+    height: 90px;
+  }
+  .logo-flux {
+    max-height: 90px;
+    height: 90px;
+  }
+  .left-sect {
+    width: 100%;
+    padding-right: 20px; 
+  }
+}
+
+@media (max-width: 800px) {
+  
 }

@@ -179,23 +179,40 @@ export default function Home() {
       <>
         <style jsx global>
           {`
-      body {
-          background: #2d3748; 
-       }
+            body {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 48px;
+              min-height: 100vh;
+              background-color: #fbf3e2;
+              color: #02395d;
+              font-size: 20px;
+              line-height: 1.45;
+              margin: 0;
+              background-image: url(https://soulagain.crypto-elites.club/assets/images/bg/spiral2.gif);
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: 50% 50%;
+              font-family: acier-bat-solid, sans-serif;
+            }
+            main {
+              height: 100vh;
+              width: 100vw;
+            }
    `}
         </style>
-        <Card>
-          <CardHeader>
-            <Flex minWidth='max-content' alignItems='center' gap='2'>
+        <Card >
+          <CardHeader backgroundColor='#fbf3e2'>
+            <Flex minWidth='max-content' flexDirection='column-reverse' alignItems='center' gap='2'>
               <Box>
-                <Heading size='md'>{headerText}</Heading>
+                <Heading color= '#02395d' fontFamily='acier-bat-solid' size='md'>{headerText}</Heading>
               </Box>
               {loading ? (<></>) : (
-                <Flex justifyContent="flex-end" marginLeft="auto">
-                  <Box background={"teal.100"} borderRadius={"5px"} minWidth={"50px"} minHeight={"50px"} p={2} >
+                <Flex justifyContent="flex-end" >
+                  <Box background={"teal.100"} borderRadius={"5px"} minWidth={"50px"} p={2} >
                     <VStack >
-                      <Text fontSize={"sm"}>Available NFTs:</Text>
-                      <Text fontWeight={"semibold"}>{Number(candyMachine?.data.itemsAvailable) - Number(candyMachine?.itemsRedeemed)}/{Number(candyMachine?.data.itemsAvailable)}</Text>
+                      <Text color= '#02395d' fontFamily='acier-bat-solid' fontWeight={"semibold"}>Available NFTs: {Number(candyMachine?.data.itemsAvailable) - Number(candyMachine?.itemsRedeemed)}/{Number(candyMachine?.data.itemsAvailable)}</Text>
                     </VStack>
                   </Box>
                 </Flex>
@@ -203,7 +220,7 @@ export default function Home() {
             </Flex>
           </CardHeader>
 
-          <CardBody>
+          <CardBody backgroundColor='#fbf3e2'>
             <Center>
               <Box
                 rounded={'lg'}
@@ -214,7 +231,7 @@ export default function Home() {
                   height={230}
                   objectFit={'cover'}
                   alt={"project Image"}
-                  src={image}
+                  src={'https://soulagain.crypto-elites.club/assets/images/nft/character1.gif'}
                 />
               </Box>
             </Center>
@@ -282,11 +299,28 @@ export default function Home() {
   return (
     <main>
       <div className={styles.wallet}>
-        <WalletMultiButtonDynamic />
+        <div className="h-cont">
+          <div className="left-sect">
+            <a href="https://soulagain.crypto-elites.club/">
+              <img className="logo" src="https://soulagain.crypto-elites.club/assets/images/logoC.svg"/>
+            </a>
+            <a href="https://runonflux.io/fluxlabs.html">
+              <img className="logo-flux" src="https://soulagain.crypto-elites.club/assets/images/icon/flux_labs.svg"/>
+            </a>
+          </div>
+          <a href="https://soulagain.crypto-elites.club/" className="Navhome">
+            Home
+          </a>
+          <WalletMultiButtonDynamic/>
+        </div>
+        
       </div>
 
       <div className={styles.center}>
         <PageContent key="content" />
+      </div>
+      <div className="footer">
+        <p>2023 CEC</p>
       </div>
     </main>
   );
