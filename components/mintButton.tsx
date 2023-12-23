@@ -79,11 +79,11 @@ const mintClick = async (
         return;
     }
 
-    let buyBeer = true;
-    if (!process.env.NEXT_PUBLIC_BUYMARKBEER) {
-        buyBeer = false;
-        console.log("The Creator does not want to pay for MarkSackerbergs beer 😒")
-    }
+    //let buyBeer = true;
+    //if (!process.env.NEXT_PUBLIC_BUYMARKBEER) {
+    //    buyBeer = false;
+    //    console.log("The Creator does not want to pay for MarkSackerbergs beer 😒")
+    //}
 
     try {
         //find the guard by guardToUse.label and set minting to true
