@@ -448,7 +448,7 @@ export function ButtonList({
                                     candyMachine,
                                     candyGuard,
                                     ownedTokens,
-                                    //numberInputValues[buttonGuard.label] || 1,
+                                    numberInputValues[buttonGuard.label] || 1,
                                     toast,
                                     mintsCreated,
                                     setMintsCreated,
