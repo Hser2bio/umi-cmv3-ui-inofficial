@@ -412,8 +412,8 @@ export function ButtonList({
                 <Heading size='xs' textTransform='uppercase'>
                     {buttonGuard.header}
                 </Heading>
-                {/*<Flex justifyContent="flex-end" marginLeft="auto">
-                    {
+                <Flex justifyContent="flex-end" marginLeft="auto">
+                    {/*{
                         buttonGuard.endTime > createBigInt(0) && buttonGuard.endTime - solanaTime > createBigInt(0) && (!buttonGuard.startTime || buttonGuard.startTime - solanaTime <= createBigInt(0)) &&
                         <><Text fontSize="sm" marginRight={"2"} >Ending in: </Text><Timer toTime={buttonGuard.endTime} solanaTime={solanaTime} setCheckEligibility={setCheckEligibility} /></>
                     }
