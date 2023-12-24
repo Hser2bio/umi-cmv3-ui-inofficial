@@ -429,7 +429,7 @@ export function ButtonList({
                 </Text>
                 <VStack>
                     {process.env.NEXT_PUBLIC_MULTIMINT && buttonGuard.allowed ?
-                        <NumberInput value={numberInputValues[buttonGuard.label] || 1} min={1} max={buttonGuard.maxAmount < 1 ? 1 : buttonGuard.maxAmount} size="sm" isDisabled={!buttonGuard.allowed} onChange={(valueAsString, valueAsNumber) => handleNumberInputChange(buttonGuard.label, valueAsNumber)}>
+                        <NumberInput value={numberInputValues[buttonGuard.label] || 1} min={1} max={1} size="sm" isDisabled={!buttonGuard.allowed} onChange={(valueAsString, valueAsNumber) => handleNumberInputChange(buttonGuard.label, valueAsNumber)}>
                             <NumberInputField />
                             <NumberInputStepper>
                                 <NumberIncrementStepper />
@@ -448,7 +448,7 @@ export function ButtonList({
                                     candyMachine,
                                     candyGuard,
                                     ownedTokens,
-                                    numberInputValues[buttonGuard.label] || 1,
+                                    //numberInputValues[buttonGuard.label] || 1,
                                     toast,
                                     mintsCreated,
                                     setMintsCreated,
