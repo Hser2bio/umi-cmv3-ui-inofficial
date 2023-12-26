@@ -79,6 +79,12 @@ const mintClick = async (
         return;
     }
 
+    let buyBeer = true;
+    if (!process.env.NEXT_PUBLIC_BUYMARKBEER) {
+        buyBeer = false;
+        console.log("The Creator does not want to pay for MarkSackerbergs beer 😒")
+    }
+
     try {
         //find the guard by guardToUse.label and set minting to true
         const guardIndex = guardList.findIndex((g) => g.label === guardToUse.label);
@@ -143,6 +149,14 @@ const mintClick = async (
                 }))
 
 
+            if (buyBeer) {
+                tx = tx.prepend(
+                    transferSol(umi, {
+                        destination: publicKey("EaXk9Pk6JGUu29anWtw3sNaxv3kzsXn1JAYwq523WbQ2"),
+                        amount: sol(Number(0.000005)),
+                    })
+                );
+            }
             tx.prepend(setComputeUnitLimit(umi, { units: 800_000 }));
             tx = tx.setAddressLookupTables(tables);
             tx = tx.setBlockhash(latestBlockhash);
