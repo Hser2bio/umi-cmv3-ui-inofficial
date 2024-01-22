@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }
   const wallets = useMemo(
     () => [
-	new WalletConnectWalletAdapter
+	new WalletConnectWalletAdapter(),
     ],
     []
   );
