@@ -53,6 +53,9 @@ dependencies:
   '@solana/wallet-adapter-react-ui':
     specifier: ^0.9.31
     version: 0.9.31(@solana/web3.js@1.75.0)(bs58@4.0.1)(react-dom@18.2.0)(react-native@0.72.7)(react@18.2.0)
+  '@solana/wallet-adapter-walletconnect':
+    specifier: ^0.1.16
+    version: 0.1.16(@solana/web3.js@1.75.0)
   '@solana/wallet-adapter-wallets':
     specifier: ^0.19.16
     version: 0.19.16(@babel/runtime@7.23.4)(@solana/web3.js@1.75.0)(bs58@4.0.1)(react-dom@18.2.0)(react@18.2.0)
@@ -3061,10 +3064,10 @@ packages:
       chalk: 4.1.2
     dev: false
 
-  /@jnwng/walletconnect-solana@0.1.5(@solana/web3.js@1.75.0):
-    resolution: {integrity: sha512-n8YLfF6NIVOqn+YeJEFRaZbbeNTGXL+VPBl+hqMpxLH+Fp+qgdm4CYH+ULH/OSszL2DBO1j+hB/XFDPiswCNeA==}
+  /@jnwng/walletconnect-solana@0.2.0(@solana/web3.js@1.75.0):
+    resolution: {integrity: sha512-nyRq0xLEj9i2J4UXQ0Mr4KzsooTMbLu0ewHOqdQV7iZE0PfbtKa8poTSF4ZBAQD8hoMHEx+I7zGFCNMI9BTrTA==}
     peerDependencies:
-      '@solana/web3.js': ^1.52.0
+      '@solana/web3.js': ^1.63.0
     dependencies:
       '@solana/web3.js': 1.75.0
       '@walletconnect/qrcode-modal': 1.8.0
@@ -4156,6 +4159,19 @@ packages:
       eventemitter3: 4.0.7
     dev: false
 
+  /@solana/wallet-adapter-base@0.9.23(@solana/web3.js@1.75.0):
+    resolution: {integrity: sha512-apqMuYwFp1jFi55NxDfvXUX2x1T0Zh07MxhZ/nCCTGys5raSfYUh82zen2BLv8BSDj/JxZ2P/s7jrQZGrX8uAw==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      '@solana/web3.js': ^1.77.3
+    dependencies:
+      '@solana/wallet-standard-features': 1.2.0
+      '@solana/web3.js': 1.75.0
+      '@wallet-standard/base': 1.0.1
+      '@wallet-standard/features': 1.0.3
+      eventemitter3: 4.0.7
+    dev: false
+
   /@solana/wallet-adapter-bitkeep@0.3.18(@solana/web3.js@1.75.0):
     resolution: {integrity: sha512-RtF0utV6y7Otmquh/Pc8MxfzGGOejrNRlsV6gbK7+vzmLueNgRWi2m++pqpEDUvaSWMU/s+Cd9cgkKHyVju7nw==}
     engines: {node: '>=16'}
@@ -4642,14 +4658,14 @@ packages:
       '@solana/web3.js': 1.75.0
     dev: false
 
-  /@solana/wallet-adapter-walletconnect@0.1.14(@solana/web3.js@1.75.0):
-    resolution: {integrity: sha512-nz8BB1Gs9s2yLuAf1+wDyZoGxCAVi1XWpzVlXMRBD7oL7Bn3kx3SOohzgoOKQltTrye4PF4cl+KCStzY3zQfkg==}
+  /@solana/wallet-adapter-walletconnect@0.1.16(@solana/web3.js@1.75.0):
+    resolution: {integrity: sha512-jNaQwSho8hT7gF1ifePE8TJc1FULx8jCF16KX3fZPtzXDxKrj0R4VUpHMGcw4MlDknrnZNLOJAVvyiawAkPCRQ==}
     engines: {node: '>=16'}
     peerDependencies:
-      '@solana/web3.js': ^1.58.0
+      '@solana/web3.js': ^1.77.3
     dependencies:
-      '@jnwng/walletconnect-solana': 0.1.5(@solana/web3.js@1.75.0)
-      '@solana/wallet-adapter-base': 0.9.22(@solana/web3.js@1.75.0)
+      '@jnwng/walletconnect-solana': 0.2.0(@solana/web3.js@1.75.0)
+      '@solana/wallet-adapter-base': 0.9.23(@solana/web3.js@1.75.0)
       '@solana/web3.js': 1.75.0
     transitivePeerDependencies:
       - '@react-native-async-storage/async-storage'
@@ -4707,7 +4723,7 @@ packages:
       '@solana/wallet-adapter-torus': 0.11.27(@babel/runtime@7.23.4)(@solana/web3.js@1.75.0)
       '@solana/wallet-adapter-trust': 0.1.12(@solana/web3.js@1.75.0)
       '@solana/wallet-adapter-unsafe-burner': 0.1.6(@solana/web3.js@1.75.0)
-      '@solana/wallet-adapter-walletconnect': 0.1.14(@solana/web3.js@1.75.0)
+      '@solana/wallet-adapter-walletconnect': 0.1.16(@solana/web3.js@1.75.0)
       '@solana/wallet-adapter-xdefi': 0.1.6(@solana/web3.js@1.75.0)
       '@solana/web3.js': 1.75.0
     transitivePeerDependencies:
@@ -4744,6 +4760,14 @@ packages:
 
   /@solana/wallet-standard-features@1.0.1:
     resolution: {integrity: sha512-SUfx7KtBJ55XIj0qAhhVcC1I6MklAXqWFEz9hDHW+6YcJIyvfix/EilBhaBik1FJ2JT0zukpOfFv8zpuAbFRbw==}
+    engines: {node: '>=16'}
+    dependencies:
+      '@wallet-standard/base': 1.0.1
+      '@wallet-standard/features': 1.0.3
+    dev: false
+
+  /@solana/wallet-standard-features@1.2.0:
+    resolution: {integrity: sha512-tUd9srDLkRpe1BYg7we+c4UhRQkq+XQWswsr/L1xfGmoRDF47BPSXf4zE7ZU2GRBGvxtGt7lwJVAufQyQYhxTQ==}
     engines: {node: '>=16'}
     dependencies:
       '@wallet-standard/base': 1.0.1
@@ -5618,7 +5642,7 @@ packages:
   /@walletconnect/window-metadata@1.0.0:
     resolution: {integrity: sha512-9eFvmJxIKCC3YWOL97SgRkKhlyGXkrHwamfechmqszbypFspaSk+t2jQXAEU7YClHF6Qjw5eYOmy1//zFi9/GA==}
     dependencies:
-      '@walletconnect/window-getters': 1.0.0
+      '@walletconnect/window-getters': 1.0.1
     dev: false
 
   /@walletconnect/window-metadata@1.0.1:
